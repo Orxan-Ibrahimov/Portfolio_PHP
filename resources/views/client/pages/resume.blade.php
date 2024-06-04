@@ -62,8 +62,8 @@
                     <ul>
                         <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
                         <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                        <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                        <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                        <li>Recommended and consulted with assets/clients on the most appropriate graphic design</li>
+                        <li>Created 4+ design presentations and proposals a month for assets/clients and account managers</li>
                     </ul>
                     </p>
                 </div>

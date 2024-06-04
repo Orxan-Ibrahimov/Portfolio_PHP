@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col-lg-4">
-                <img src="{{ asset('front-panel/img/about.jpg') }}" class="img-fluid" alt="">
+                <img src="{{ asset('assets/client/img/about.jpg') }}" class="img-fluid" alt="">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content">
                 <h3>Illustrator &amp; UI/UX Designer</h3>
@@ -129,7 +129,7 @@
 
             <div class="col-lg-3 col-6 text-center">
                 <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Clients</p>
+                <p>assets/clients</p>
             </div>
 
             <div class="col-lg-3 col-6 text-center">
@@ -167,7 +167,7 @@
 
                 <div class="swiper-slide">
                     <div class="testimonial-item">
-                        <img src="{{asset('front-panel/img/testimonials/testimonials-1.jpg')}}" class="testimonial-img" alt="">
+                        <img src="{{asset('assets/client/img/testimonials/testimonials-1.jpg')}}" class="testimonial-img" alt="">
                         <h3>Saul Goodman</h3>
                         <h4>Ceo &amp; Founder</h4>
                         <p>
@@ -180,7 +180,7 @@
 
                 <div class="swiper-slide">
                     <div class="testimonial-item">
-                        <img src="{{ asset('front-panel/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
+                        <img src="{{ asset('assets/client/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
                         <h3>Sara Wilsson</h3>
                         <h4>Designer</h4>
                         <p>
@@ -193,7 +193,7 @@
 
                 <div class="swiper-slide">
                     <div class="testimonial-item">
-                        <img src="{{ asset('front-panel/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
+                        <img src="{{ asset('assets/client/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
                         <h3>Jena Karlis</h3>
                         <h4>Store Owner</h4>
                         <p>
@@ -206,7 +206,7 @@
 
                 <div class="swiper-slide">
                     <div class="testimonial-item">
-                        <img src="{{ asset('front-panel/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
+                        <img src="{{ asset('assets/client/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
                         <h3>Matt Brandon</h3>
                         <h4>Freelancer</h4>
                         <p>
@@ -219,7 +219,7 @@
 
                 <div class="swiper-slide">
                     <div class="testimonial-item">
-                        <img src="{{ asset('front-panel/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
+                        <img src="{{ asset('assets/client/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
                         <h3>John Larson</h3>
                         <h4>Entrepreneur</h4>
                         <p>

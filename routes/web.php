@@ -33,6 +33,15 @@ Route::get('/portfolio', function () {
     return view('client.pages.portfolio');
 });
 
+Route::get('/portfolio-details', function () {
+    return view('client.pages.portfolio-details');
+});
+
 Route::get('/contact', function () {
     return view('client.pages.contact');
+});
+
+// -------------Admin ----------------
+Route::get('/admin', function () {
+    return view('admin.layout');
 });
