@@ -20,3 +20,19 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('client.pages.about');
 });
+
+Route::get('/resume', function () {
+    return view('client.pages.resume');
+});
+
+Route::get('/services', function () {
+    return view('client.pages.services');
+});
+
+Route::get('/portfolio', function () {
+    return view('client.pages.portfolio');
+});
+
+Route::get('/contact', function () {
+    return view('client.pages.contact');
+});

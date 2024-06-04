@@ -7,12 +7,12 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="active" href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a class="{{ request()-> is('/')?'active':null }}" href="/">Home</a></li>
+          <li><a class="{{ request()-> is('about')?'active':null }}" href="/about">About</a></li>
+          <li><a class="{{ request()-> is('resume')?'active':null }}" href="/resume">Resume</a></li>
+          <li><a class="{{ request()-> is('services')?'active':null }}" href="/services">Services</a></li>
+          <li><a class="{{ request()-> is('portfolio')?'active':null }}" href="/portfolio">Portfolio</a></li>
+          <li><a class="{{ request()-> is('contact')?'active':null }}" href="/contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
