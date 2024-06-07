@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Client\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,35 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client.pages.home');
-});
-
-Route::get('/about', function () {
-    return view('client.pages.about');
-});
-
-Route::get('/resume', function () {
-    return view('client.pages.resume');
-});
+Route::get('/', [PagesController::class, 'home']);
+Route::get('resume', [PagesController::class, 'resume']);
+Route::get('about', [PagesController::class, 'about']);
+Route::get('portfolio', [PagesController::class, 'portfolio']);
+Route::get('portfolio/{portfolio}', [PagesController::class, 'portfolio_details']);
+Route::get('contact', [PagesController::class, 'contact']);
+Route::post('t', [PagesController::class, 'contact_create']);
 
 Route::get('/services', function () {
     return view('client.pages.services');
 });
 
-Route::get('/portfolio', function () {
-    return view('client.pages.portfolio');
-});
-
-Route::get('/portfolio-details', function () {
-    return view('client.pages.portfolio-details');
-});
-
-Route::get('/contact', function () {
-    return view('client.pages.contact');
-});
-
 // -------------Admin ----------------
 Route::get('/admin', function () {
     return view('admin.layout');
+});
+
+Route::get('/register', function () {
+    return view('admin.auth.register');
 });

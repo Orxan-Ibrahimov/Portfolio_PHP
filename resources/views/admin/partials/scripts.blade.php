@@ -9,6 +9,9 @@
 <script src="{{ asset('assets/admin/dist/js/sidebarmenu.js') }}"></script>
 <!--Custom JavaScript -->
 <script src="{{ asset('assets/admin/dist/js/custom.min.js') }}"></script>
+
+<script src="{{ asset('assets/libs/jquery-steps/build/jquery.steps.min.js') }}"></script>
+<script src="{{ asset('assets/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
 <!--This page JavaScript -->
 <!-- <script src="../dist/js/pages/dashboards/dashboard1.js"></script> -->
 <!-- Charts js Files -->
