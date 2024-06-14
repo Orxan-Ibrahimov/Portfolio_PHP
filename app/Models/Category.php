@@ -11,7 +11,14 @@ class Category extends Model
 
     protected $guarded = [];
 
-    public function portfolios(){
+    public function portfolios()
+    {
         return $this->hasMany(Portfolio::class);
     }
+
+    public function translations()
+    {
+        return $this->hasMany(CategoryTranslation::class);
+    }
+   
 }

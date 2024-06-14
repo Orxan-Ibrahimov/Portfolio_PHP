@@ -3,11 +3,11 @@
 @section('content')
 <section id="hero" class="d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
-      <h1>{{ $user -> name . ' '. $user -> surname  }}</h1>
+      <h1 class="text-white">{{ $home_page -> title }}</h1>
       <div id="biograpy">
-        {!! $user -> biography !!}
+        <h2 class="text-white">{{ $home_page -> description }}</h2>
       </div>
-      <a href="/about" class="btn-about">About Me</a>
+      <a href="/about" class="btn-about">{{ $home_page -> about_me }}</a>
     </div>
   </section>
   @endsection

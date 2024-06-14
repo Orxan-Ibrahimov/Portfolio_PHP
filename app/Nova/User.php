@@ -94,6 +94,8 @@ class User extends Resource
                 ->creationRules('required', Rules\Password::defaults())
                 ->hideWhenUpdating(),
 
+            FieldsHasMany::make('Translations', 'translations', resource: UserTranslation::class),
+
             FieldsHasMany::make('Skills', 'skills', resource: Skill::class),
             FieldsHasMany::make('Educations', 'educations', resource: Education::class),
             FieldsHasMany::make('Experiences', 'experiences', resource: Experience::class),

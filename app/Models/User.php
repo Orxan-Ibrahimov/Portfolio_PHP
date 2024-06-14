@@ -20,6 +20,11 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
+    public function translations()
+    {
+        return $this->hasMany(UserTranslation::class);
+    }
+
     public function social_medias()
     {
         return $this->hasMany(SocialMedia::class);
@@ -50,6 +55,16 @@ class User extends Authenticatable
         return $this->hasMany(Portfolio::class);
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (User::count() >= 1) {
+                throw new \Exception('Only one row is allowed in this table.');
+            }
+        });
+    }
 
     /**
      * The attributes that should be hidden for serialization.

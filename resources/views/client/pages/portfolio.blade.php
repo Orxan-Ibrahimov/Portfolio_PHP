@@ -6,25 +6,26 @@
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
-      <h2>Portfolio</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <h2>@lang('heading.portfolio')</h2>
     </div>
 
     <div class="row" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="portfolio-flters">
           <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
+          <!-- <li data-filter=".filter-web">Web</li> -->
+
+          @foreach($categories as $category)
+          <li data-filter=".{{ strtolower($category -> category -> title) }}">{{ strtolower($category -> name) }}</li>
+          @endforeach
         </ul>
       </div>
     </div>
 
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-      @foreach($user->portfolios as $portfolio)
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+      @foreach($user_tr -> user ->portfolios as $portfolio)
+      <div class="col-lg-4 col-md-6 portfolio-item {{ strtolower($portfolio -> category -> title) }}">
         <div class="portfolio-wrap">
           <img src="{{ asset($portfolio -> cover) }}" class="img-fluid" alt="">
           <div class="portfolio-info">

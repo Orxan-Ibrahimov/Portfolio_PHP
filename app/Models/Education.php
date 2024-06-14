@@ -11,6 +11,11 @@ class Education extends Model
 
     protected $guarded = [];
 
+    public function translations()
+    {
+        return $this->hasMany(EducationTranslation::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

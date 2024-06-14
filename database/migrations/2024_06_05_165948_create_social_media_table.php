@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('icon_code');
+            $table->string('link');
             $table->bigInteger('user_id')->foreignIdFor(User::class)->constrained();
             $table->timestamps();
         });

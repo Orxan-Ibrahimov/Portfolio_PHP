@@ -6,40 +6,44 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>About</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $about_page -> title }}</h2>
         </div>
 
         <div class="row">
             <div class="col-lg-4">
-                <img src="{{ asset($user -> profile_image) }}" class="img-fluid" alt="">
+                <img src="{{ asset($user_tr ->user -> profile_image) }}" class="img-fluid" alt="profile" />
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content">
-                <h1>{{ $user -> name .' '. $user -> surname }}</h1>
+                <h1>{{ $user_tr -> translated_name .' '. $user_tr -> translated_surname }}</h1>
                 <h3>Web Developer</h3>
 
 
                 <div class="row">
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-rounded-right"></i> <strong>Birthday:</strong> {{ $user -> birthday-> format('d M Y') }}</li>
-                            <li><i class="bi bi-rounded-right"></i> <strong>Website:</strong> <a href="{{ $user -> github }}">{{ $user -> github }}</a> </li>
-                            <li><i class="bi bi-rounded-right"></i> <strong>Phone:</strong> {{ $user -> phone }}</li>
-                            <li><i class="bi bi-rounded-right"></i> <strong>City:</strong> City : {{ $user -> city }}</li>
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> birthday }}:</strong> {{ $user_tr -> user -> birthday-> format('d F Y') }}</li>
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> website }}:</strong> <a href="{{ $user_tr -> user -> github }}">{{ $user_tr -> user -> github }}</a> </li>
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> phone }}:</strong> {{ $user_tr -> user -> phone }}</li>
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> city }}:</strong> {{ $user_tr -> translated_city }}</li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> {{ Date::now()->diffInYears($user->birthday) }}</li>
-                            <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> Master</li>
-                            <li><i class="bi bi-rounded-right"></i> <strong>PhEmailone:</strong> {{ $user -> email }} </li>
-                            <li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> {{ $user -> is_freelance ? 'Available':'Not-Available' }}</li>
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> birthday }}:</strong> {{ Date::now()->diffInYears($user_tr -> user ->birthday) }}</li>
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> degree }}:</strong> Master</li>
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> email }}:</strong> {{ $user_tr -> user -> email }} </li>
+                            @if($user_tr -> user -> is_freelance)
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> freelance }}:</strong> {{ $about_page -> available }}</li>
+                            @else
+                            <li><i class="bi bi-rounded-right"></i> <strong>{{ $about_page -> freelance }}:</strong> {{ $about_page -> not_available }}</li>
+                            @endif
+
                         </ul>
                     </div>
                 </div>
                 <div>
-                    <h1>Biography</h1>
-                    {!! $user -> biography !!}
+                    <h1>{{ $about_page -> biography }}</h1>
+                    {!! $user_tr -> translated_biography !!}
                 </div>
             </div>
         </div>
@@ -53,13 +57,12 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Skills</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $about_page -> skills }}</h2>
         </div>
 
         <div class="row skills-content">
 
-            @foreach($user -> skills as $skill)
+            @foreach($user_tr ->user -> skills as $skill)
             <div class="col-lg-6">
                 <div class="progress">
                     <p class="skill">{{ $skill -> title }} </p>

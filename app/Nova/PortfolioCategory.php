@@ -47,6 +47,8 @@ class PortfolioCategory extends Resource
             Text::make('Title', 'title')-> sortable(),
 
             HasMany::make('Portfolios', 'portfolios', resource: Portfolio::class),
+
+            HasMany::make('Category Translations', 'translations', resource: CategoryTranslation::class),
             
         ];
     }

@@ -2,7 +2,10 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use ClassicO\NovaMediaLibrary\MediaLibrary;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
@@ -47,12 +50,11 @@ class PortfolioGallery extends Resource
         }
         return [
             ID::make()->sortable(),
-
-            Image::make('Image', 'image')
-                ->rules('image', 'extensions:jpg,png,jpeg')
-                ->disk('local')
-                ->path('projects/galleries'),
-
+          
+            Image::make('image')
+            ->rules('image', 'extensions:jpg,png,jpeg')
+            ->disk('local')
+            ->path('images/projects/cover'),
             BelongsTo::make('Portfolio', 'portfolio', resource: Portfolio::class)
                 ->display('title')
         ];

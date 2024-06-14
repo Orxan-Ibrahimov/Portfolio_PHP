@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -46,13 +47,23 @@ class Education extends Resource
     {
         return [
             ID::make()->sortable(),
+            
             Text::make('University', 'university')-> sortable(),
+            
             Text::make('Profession', 'profession')-> sortable(),
+            
             Text::make('Degree', 'degree')-> sortable(),
+            
             Textarea::make('Description', 'description'),
+            
             Date::make('Start Date', 'start_date'),
+            
             Date::make('End Date', 'end_date'),
-            BelongsTo::make('User', 'user', resource:User::class)
+            
+            BelongsTo::make('User', 'user', resource:User::class),
+
+            HasMany::make('Translations', 'translations', resource: EducationTranslation::class),
+
         ];
     }
 
